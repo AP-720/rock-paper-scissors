@@ -28,33 +28,28 @@ function getHumanChoice() {
         const lower = word.toLowerCase();
         return word.charAt(0).toUpperCase() + lower.slice(1);
     }
-    
+
     pick = capitalize(pick);
 
+
     switch (pick) {
+
         case "Rock":
         case "Paper":
         case "Scissors":
             return pick;
             break;
-
+    
         case "":
             return ( "Enter your pick. Please enter either Rock, Paper or Scissors")
         default:
             return ( "Looks like you made a mistake. Please enter either Rock, Paper or Scissors" );
     }
 }
-    
-
-
-let humanScore = 0;
-let computerScore = 0;
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 function playRound(humanSelection, computerSelection) {
 
+    
     // Rock
     if (humanSelection === "Rock" && computerSelection === "Paper") {
         console.log("You Lose! Paper beats Rock.");
@@ -89,16 +84,33 @@ function playRound(humanSelection, computerSelection) {
     }
 }
 
+let humanScore = 0;
+let computerScore = 0;    
 
 function playGame() {
 
+    let i = 5; 
+
+    while (i) {
+
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+    console.log(`Your score = ${humanScore}.`);
+    console.log(`Computer score = ${computerScore}.`);
+    i--;
+    }
+
+if (humanScore > computerScore) {
+    console.log (`You win! ${humanScore} beats Computers ${computerScore}.`);
+} else if (computerScore > humanScore) {
+    console.log (`You lose. Computers ${computerScore} beats your ${humanScore}. Better luck next time.`);
+} else {
+    console.log('Its a draw.');
 }
 
+}
 
-console.log(humanSelection);
-console.log(computerSelection);
-console.log(playRound(humanSelection, computerSelection));
-console.log(`Your score = ${humanScore}.`);
-console.log(`Computer score = ${computerScore}.`);
-
+playGame();
 
