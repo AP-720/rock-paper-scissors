@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Comic Cat'; /* Name your font family */
+    src: url(fonts/Comic_CAT.otf); /* Locate the .ttf file within your directory*/
+  }
+
+* {
+    font-family: 'Comic Cat', sans-serif;
+    background-color: #afe0bc;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 4em;
+}
+
+.intro {
+    text-align: center;
+    font-size: 3em;
+}
+
+.button-container {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.button-container > button {
+    font-size: 2em;
+}
+
+#outcome {
+    padding-top: 50px;
+}
+
+.score-div {
+    font-size: 1.5em;
+    font-weight: bold;
+    /* color: #8b5695df  ; */
+    /* text-decoration: #D9AFE0 wavy underline; */
+}
+
+.winner {
+    font-size: 2em;
+    color: #6581e6;
+}
+
+.loser {
+    font-size: 2em;
+    color: #A4605B;
+}
